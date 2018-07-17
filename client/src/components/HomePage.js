@@ -40,10 +40,10 @@ class HomePage extends Component {
         <Col xs={6} md={4}>
           <Thumbnail src={city.picture} alt="242x200">
             <h3>{city.name}</h3>
-            <p>Description</p>
+            {/* <p>More info click below</p> */}
             <p>
               <Link to={`/cities/${city.id}`}>
-                <Button bsStyle="primary">Button</Button>
+                <Button bsStyle="primary">Stuck here?</Button>
               </Link>
             </p>
           </Thumbnail>
