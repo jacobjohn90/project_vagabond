@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import {Carousel} from 'react-bootstrap'
 import  styled from 'styled-components'
+import {Thumbnail, Grid, Row, Col, Button, } from 'react-bootstrap'
 
 const CarouselContainer = styled.div`
-margin-top:50px;
+
 ` 
 class HomePage extends Component {
     render() {
         return (
+          <div>
             <CarouselContainer>
                 <Carousel>
   <Carousel.Item>
@@ -33,17 +35,43 @@ class HomePage extends Component {
   </Carousel.Item>
 </Carousel>
             </CarouselContainer>
-    
+         <Grid>
+        <Row>
+          <Col xs={6} md={4}>
+            <Thumbnail src="https://images.unsplash.com/photo-1473042904451-00171c69419d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0935443826ee59daeee2d69f85e22063&auto=format&fit=crop&w=500&q=60" alt="242x200">
+              <h3>Thumbnail label</h3>
+              <p>Description</p>
+              <p>
+                <Button bsStyle="primary">Button</Button>&nbsp;
+                <Button bsStyle="default">Button</Button>
+              </p>
+            </Thumbnail>
+          </Col>
+          <Col xs={6} md={4}>
+            <Thumbnail src="/thumbnaildiv.png" alt="242x200">
+              <h3>Thumbnail label</h3>
+              <p>Description</p>
+              <p>
+                <Button bsStyle="primary">Button</Button>&nbsp;
+                <Button bsStyle="default">Button</Button>
+              </p>
+            </Thumbnail>
+          </Col>
+          <Col xs={6} md={4}>
+            <Thumbnail src="/thumbnaildiv.png" alt="242x200">
+              <h3>Thumbnail label</h3>
+              <p>Description</p>
+              <p>
+                <Button bsStyle="primary">Button</Button>&nbsp;
+                <Button bsStyle="default">Button</Button>
+              </p>
+            </Thumbnail>
+          </Col>
+        </Row>
+      </Grid>;
+      </div>
         );
-     <div>
-       <div>
-         <img src=''/>
-         <p>Atlanta</p>
-       </div>
-       <div>
-         <img src=''/>
-       </div>
-     </div>
+   
     }
 }
 
