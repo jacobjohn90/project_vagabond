@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router,Switch ,Route, Link} from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
+import {Navbar} from 'react-bootstrap'
 import HomePage from './components/HomePage'
 
 class App extends Component {
@@ -9,7 +10,9 @@ class App extends Component {
   
     return (
       <Router>
+        
         <Switch>
+          
           <Route exact path='/' component={HomePage}/>
         </Switch>
       </Router>

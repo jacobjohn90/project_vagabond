@@ -7,7 +7,7 @@ class HomePage extends Component {
             <div>
                 <Carousel>
   <Carousel.Item>
-    <img width={13000} height={100} alt="900x500" src="https://source.unsplash.com/J-ClkL7wNUs/900x300" />
+    <img width={13000} height={100} alt="900x500" src="https://source.unsplash.com/J-ClkL7wNUs/900x450" />
     <Carousel.Caption>
       <h3>Atlanta</h3>
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
