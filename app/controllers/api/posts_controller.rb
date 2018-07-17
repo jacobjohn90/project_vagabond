@@ -12,7 +12,8 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-    @post = Post.create(post_params)
+    @city = City.find(params[:city_id])
+    @post = @city.posts.create(post_params)
     render json: @post
     end
     
