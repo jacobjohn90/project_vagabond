@@ -1,29 +1,38 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components'
 
+
+const ImageContainer = styled.div`
+img{
+  width:100vw;
+  height:50vh
+}
+`
 class City extends Component {
     state={
-        city:{},
-        users:[],
+        city:[],
         post:[]
     }
     componentDidMount(){
          
-       const city_id=this.props.match.params.id;
-        this.getCity(city_id)
+        this.getCity()
     }
 
     getCity = async () => {
+        const cityId=this.props.match.params.id;
         try {
-            const res = await axios.get('/api/city');
-            await this.setState({city: res.data});
-            return res.data;
+            const cityReponse = await axios.get(`/api/cities/${cityId}`)
+            const postResponse = await axios.get(`/api/cities/${cityId}/posts`)
+            this.setState({city: cityReponse.data,
+           post: postResponse.data });
+            console.log(this.state)
         }
         catch (err) {
             console.log(err)
-            await this.setState({error: err.message})
-            return err.message
+          
+            // return err.message
         }
     }
     
@@ -34,9 +43,10 @@ class City extends Component {
         const eachPosts= this.state.post.map((post)=>{
               return(
                   <div> 
-                      <div> {this.state.user_id.name}</div>
-                  <div> <div> {post.title}</div> <div> {post.Component} <div>{post.created_at}</div> </div> </div>
-                <button> Edit</button> <button>Delete</button>
+                        <div> {post.title}</div>
+                         <div> {post.Component}</div> 
+                         <div>{post.created_at}</div> 
+                    <button>Edit</button> <button>Delete</button>
                    </div> 
               )
           })
@@ -44,12 +54,15 @@ class City extends Component {
         return (
             <div>
                 
-                 <nav>  <Link to={'/'}> Layover Tour Guide </Link>  {this.state.city.name} <button>New Post</button> </nav>
-                <img src= {this.state.city.picture}/>
+        
+               
                  
                
                
                  <div> 
+                     <ImageContainer>
+                      <img src= {this.state.city.picture} />
+                      </ImageContainer>
                      {eachPosts}
                 </div>
               
