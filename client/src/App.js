@@ -5,6 +5,7 @@ import './App.css';
 
 import HomePage from './components/HomePage'
 import NavBar from './components/NavBar';
+import City from './components/City';
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ state ={
         <Switch>
           
           <Route exact path='/' component={HomePage}/>
+          <Route exact path='/city/city_id' component={City}/>
         </Switch>
       </Router>
       </div>
