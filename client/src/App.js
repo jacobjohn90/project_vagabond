@@ -22,7 +22,9 @@ state ={
         <Switch>
           
           <Route exact path='/' component={HomePage}/>
-          <Route exact path='/cities/:id' component={City}/>
+
+          <Route exact path='/cities/:city_id' component={City}/>
+
         </Switch>
       </Router>
       </div>
