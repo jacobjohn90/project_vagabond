@@ -36,7 +36,7 @@ cities = City.create([
         picture: "https://source.unsplash.com/J-ClkL7wNUs" 
     },
     {   name: "New-York",
-        picture: "https://source.unsplash.com/UExx0KnnkjY"
+        picture: "https://source.unsplash.com/UExx0KnnkjY/1500x1000"
     }
 ])
 

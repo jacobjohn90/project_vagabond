@@ -53,11 +53,6 @@ class City extends Component {
 
         return (
             <div>
-                
-        
-               
-                 
-               
                
                  <div> 
                      <ImageContainer>
