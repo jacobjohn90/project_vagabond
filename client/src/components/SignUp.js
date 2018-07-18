@@ -1,5 +1,26 @@
 import React, { Component, render } from 'react';
 import { Popover,Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Tooltip, Modal, OverlayTrigger,Button, } from 'react-bootstrap'
+import styled from 'styled-components'
+
+const ButtonStyle=styled(Button)`
+text-decoration:none;
+color:white;
+:focus{
+    text-decoration:none;
+    outline:0;
+    color:#did6e7 !important;
+}
+:active{
+    text-decoration:none;
+    outline:0 !important;
+    color:white;
+    color:#did6e7 !important;
+}
+:hover{
+    text-decoration:none;
+    color:#did6e7 !important;
+}
+`
 
 class SignUp extends Component {
     constructor(props, context) {
@@ -33,9 +54,9 @@ class SignUp extends Component {
         <div>
           
   
-          <Button bsStyle="link" bsSize="large" onClick={this.handleShow}>
+          <ButtonStyle bsStyle="link" bsSize="large" onClick={this.handleShow}>
             Sign Up
-          </Button>
+          </ButtonStyle>
   
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>

@@ -5,10 +5,14 @@ import LogIn from './LoginPage';
 import SignUp from './SignUp';
 
 const Backer=styled.div`
-height:10rem;
-background-color:black;
+height:6rem;
+background-color:#371b2c;
 color:white;
 display:flex;
+z-index:99;
+position:fixed;
+width:100%;
+top:0;
 justify-content:space-around;
 align-items:center;
 font-family: 'Shadows Into Light', cursive;
@@ -30,6 +34,7 @@ const FirstBorn=styled.h4`
 }
 `
 
+
 class NavBar extends Component {
   state = {
     logIn: false
@@ -39,7 +44,7 @@ class NavBar extends Component {
     return (
       <Backer>
        <PappaDiv>Layover Tour Guide </PappaDiv>
-       <BabyDiv> <FirstBorn> <LogIn /></FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
+       <BabyDiv> <FirstBorn> <LogIn /> </FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
        
       </Backer>
     );
