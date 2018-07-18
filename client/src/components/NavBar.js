@@ -3,6 +3,7 @@ import { Navbar, NavDropdown, MenuItem, Nav, NavItem } from 'react-bootstrap'
 import styled from 'styled-components'
 import LogIn from './LoginPage';
 import SignUp from './SignUp';
+import { Link } from 'react-router-dom';
 
 const Backer=styled.div`
 height:6rem;
@@ -50,7 +51,7 @@ class NavBar extends Component {
   render() {
     return (
       <Backer>
-       <PappaDiv>Layover Tour Guide </PappaDiv>
+     <Link to="/">  <PappaDiv>Layover Tour Guide </PappaDiv></Link>
        <BabyDiv> <FirstBorn> <LogIn /> </FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
       </Backer>
 

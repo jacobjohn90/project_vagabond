@@ -37,7 +37,7 @@ class City extends Component {
     }
 
     getCity = async () => {
-        const cityId = this.props.match.params.user_id;
+        const cityId = this.props.match.params.city_id;
         try {
             const cityReponse = await axios.get(`/api/cities/${cityId}`)
             const postResponse = await axios.get(`/api/cities/${cityId}/posts`)

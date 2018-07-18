@@ -51,7 +51,7 @@ getUsers = async () => {
           <Switch>
             
             <Route exact path='/' component={HomePage}/>
-            <Route exact path='/cities/:city_id' component={City}/>
+            <Route exact path='/cities/:city_id' component={CityPage}/>
 
 
           </Switch>
