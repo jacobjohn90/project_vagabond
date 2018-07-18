@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-import { Row, Thumbnail, Button, Col } from "react-bootstrap";
+import { Thumbnail,  Col } from "react-bootstrap";
 
 const ThumbnailStyle = styled(Thumbnail)`
     text-align: center;
-    align-items: center;
-`;
+`
 const PostStyle = styled.div`
-display: flex;
+display: flex
 align-items: center;
+justify-content: center;
 height:100vh;
-
-
+width: 100vw;
 `
 class PostPage extends Component {
   state = {
@@ -59,7 +58,7 @@ class PostPage extends Component {
             </ThumbnailStyle>
           </Col>
 
-          <Col xs={6} md={8}>
+          <Col xs={6} md={6}>
             <ThumbnailStyle>
               <h1>{this.state.post.title}</h1>
               <h3>{this.state.post.comment}</h3>
