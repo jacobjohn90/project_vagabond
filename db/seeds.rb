@@ -30,13 +30,13 @@ users = User.create([
 
 cities = City.create([
     {   name: "New-Delhi",
-        picture: "https://source.unsplash.com/_WuPjE-MPHo/900x300"
+        picture: "https://source.unsplash.com/_WuPjE-MPHo"
     },
     {   name: "Atlanta",
-        picture: "https://source.unsplash.com/J-ClkL7wNUs/900x300" 
+        picture: "https://source.unsplash.com/J-ClkL7wNUs" 
     },
     {   name: "New-York",
-        picture: "https://source.unsplash.com/ubSUwrr04Ks/900x300"
+        picture: "https://source.unsplash.com/UExx0KnnkjY/1500x1000"
     }
 ])
 
