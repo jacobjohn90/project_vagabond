@@ -12,7 +12,7 @@ img{
 `
 class PostPage extends Component {
     state={
-        
+        user:{}
         post:{}
     }
     componentDidMount(){
@@ -22,7 +22,7 @@ class PostPage extends Component {
 
     getPost = async () => {
         const postId=this.props.match.params.id;
-        const city_id=
+        const city_id=this.props.match.params.id;
         try {
             
             const postResponse = await axios.get(`/api/cities/${city_id}posts/${postId}`)
@@ -39,8 +39,7 @@ class PostPage extends Component {
     render() {
         
 
-
-        const eachPosts= this.state.post.map((post)=>{
+        const eachPosts= this.state.posts.map((post)=>{
               return(
                   <div> 
                         <div> {post.title}</div>
