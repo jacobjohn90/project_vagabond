@@ -41,21 +41,12 @@ class NavBar extends Component {
     logIn: false,
     Overlay: false
   }
- overlayHandler=(event)=>{
-  event.preventDefault()
-  const overlay = !this.state.Overlay
-  this.setState({overlay})
-  
-// if (this.Overlay==true){
-//   this.Overlay.display== none 
-// }else{this.Overlay.display= block}
 
-}
   render() {
     return (
       <Backer>
        <PappaDiv>Layover Tour Guide </PappaDiv>
-       <BabyDiv>   <A href=''onClick={this.overlayHandler} ><FirstBorn> Log In</FirstBorn> </A>  <FirstBorn> Sign Up </FirstBorn></BabyDiv>
+       <BabyDiv>   <FirstBorn> Log In</FirstBorn>   <FirstBorn> Sign Up </FirstBorn></BabyDiv>
       <FileOverlay{... this.state.Overlay}/>
 </Backer>
             
