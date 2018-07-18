@@ -5,12 +5,22 @@ import { Thumbnail, Grid, Row, Col, Button, } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 const CarouselContainer = styled.div`
   margin-bottom: 15px;
 `
+const Badge= styled(Thumbnail)`
+:hover{
+  box-shadow: 10px 10px rgba(255, 0, 0, 0.3);
+  
+}
+`
+
+
 class HomePage extends Component {
   state = {
-    cities: []
+    cities: [],
+    lgShow: false
   }
 
   componentDidMount() {
@@ -38,7 +48,7 @@ class HomePage extends Component {
     const cityMap = this.state.cities.map((city) => {
       return (
         <Col xs={6} md={4}>
-          <Thumbnail src={city.picture} alt="242x200">
+          <Badge src={city.picture} alt="242x200">
             <h3>{city.name}</h3>
             {/* <p>More info click below</p> */}
             <p>
@@ -46,10 +56,12 @@ class HomePage extends Component {
                 <Button bsStyle="primary">Stuck here?</Button>
               </Link>
             </p>
-          </Thumbnail>
+          </Badge>
         </Col>
       )
     })
+
+
     return (
       <div>
 
@@ -83,11 +95,12 @@ class HomePage extends Component {
           </Carousel>
         </CarouselContainer>
 
-        <Grid>
+        <Grid>    
           <Row>
             {cityMap}
           </Row>
         </Grid>
+       
       </div>
     );
 

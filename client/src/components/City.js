@@ -37,7 +37,7 @@ class City extends Component {
     }
 
     getCity = async () => {
-        const cityId = this.props.match.params.id;
+        const cityId = this.props.match.params.user_id;
         try {
             const cityReponse = await axios.get(`/api/cities/${cityId}`)
             const postResponse = await axios.get(`/api/cities/${cityId}/posts`)
@@ -68,20 +68,12 @@ class City extends Component {
                         <div>{post.created_at}</div>
                     </div>
                     <hr></hr>
-                </Wrapper>
-                
+                </Wrapper>      
             )
         })
-
-
+        
         return (
             <div>
-
-
-
-
-
-
                 <div>
                     <ImageContainer>
                         <img src={this.state.city.picture} />
@@ -89,9 +81,7 @@ class City extends Component {
                         <center> <h3>Tell us what to do in... {this.state.city.name}</h3></center>
                     </ImageContainer>
                     <Post> {eachPosts}</Post>
-
                 </div>
-
             </div>
         );
     }
