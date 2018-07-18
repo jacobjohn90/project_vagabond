@@ -1,69 +1,74 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
-import styled from 'styled-components'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import styled from "styled-components";
+import { Row, Thumbnail, Button, Col } from "react-bootstrap";
+
+const ThumbnailStyle = styled(Thumbnail)`
+    text-align: center;
+    align-items: center;
+`;
+const PostStyle = styled.div`
+display: flex;
+align-items: center;
+height:100vh;
 
 
-const ImageContainer = styled.div`
-img{
-  width:100vw;
-  height:50vh
-}
 `
 class PostPage extends Component {
-    state={
+  state = {
+    currentUser: {},
+    post: {}
+  };
+  componentDidMount() {
+    this.getPost();
+  }
+
+  getPost = async () => {
+    const postId = this.props.match.params.id;
+    const cityId = this.props.match.params.city_id;
+    try {
+      const postResponse = await axios.get(
+        `/api/cities/${cityId}/posts/${postId}`
+      );
+      this.setState({ post: postResponse.data });
+      const currentUser = await this.props.users.find(
+        user => user.id === this.state.post.user_id
+      );
+      this.setState({ currentUser });
+    } catch (err) {
+      console.log(err);
+
+      // return err.message
+    }
+  };
+
+  render() {
+    if (this.state.currentUser === undefined) {
+      return null;
+    }
+
+    return (
+      <PostStyle>
         
-        post:{}
-    }
-    componentDidMount(){
-         
-        this.getPost()
-    }
+          <Col xs={6} md={4}>
+            <ThumbnailStyle src={this.state.currentUser.profile_pic} alt="242x200">
+              <h3>{this.state.currentUser.name}</h3>
+              <p>Date Joined: {this.state.currentUser.created_at}</p>
+              <p>Current City: {this.state.currentUser.current_city}</p>
+            </ThumbnailStyle>
+          </Col>
 
-    getPost = async () => {
-        const postId=this.props.match.params.id;
-        const city_id=
-        try {
-            
-            const postResponse = await axios.get(`/api/cities/${city_id}posts/${postId}`)
-            this.setState({post: postReponse.data});
-            console.log(this.state)
-        }
-        catch (err) {
-            console.log(err)
-          
-            // return err.message
-        }
-    }
-    
-    render() {
+          <Col xs={6} md={8}>
+            <ThumbnailStyle>
+              <h1>{this.state.post.title}</h1>
+              <h3>{this.state.post.comment}</h3>
+            </ThumbnailStyle>
+          </Col>
         
-
-
-        const eachPosts= this.state.post.map((post)=>{
-              return(
-                  <div> 
-                        <div> {post.title}</div>
-                         <div> {post.Component}</div> 
-                         <div>{post.created_at}</div> 
-                    <button>Edit</button> <button>Delete</button>
-                   </div> 
-              )
-          })
-
-        return (
-            <div>
-               
-                 <div> 
-                     <ImageContainer>
-                      <img src= {this.state.city.picture} />
-                      </ImageContainer>
-                     {eachPosts}
-                </div>
-              
-            </div>
-        );
-    }
+      </PostStyle>
+    );
+  }
 }
 
 export default PostPage;
