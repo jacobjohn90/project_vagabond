@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components'
+import NewPost from './NewPost';
+
+const Backer=styled.div`
+display:flex;
+justify-content:center;
+`
 
 const Wrapper = styled.div`
 display: flex;
@@ -9,6 +15,8 @@ display: flex;
 margin-left: 35%;
 margin-bottom: 1%;
 justify-content: center;
+background-color:rgba(192,192,192,0.3);
+width:45%;
 
 `
 const ImageContainer = styled.div`
@@ -24,7 +32,7 @@ flex-direction:column;
 
 `
 const ImageStyle = styled.img`
-margin-right: 1%
+margin-right: 2%
 `
 class City extends Component {
     state = {
@@ -73,16 +81,16 @@ class City extends Component {
         })
         
         return (
-            <div>
+            <backer>
                 <div>
                     <ImageContainer>
                         <img src={this.state.city.picture} />
 
-                        <center> <h3>Tell us what to do in... {this.state.city.name}</h3></center>
+                        <center> <h3>Tell us what to do in... {this.state.city.name} <NewPost/> </h3> </center>
                     </ImageContainer>
                     <Post> {eachPosts}</Post>
                 </div>
-            </div>
+            </backer>
         );
     }
 }
