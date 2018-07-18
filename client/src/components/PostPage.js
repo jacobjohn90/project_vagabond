@@ -10,23 +10,23 @@ img{
   height:50vh
 }
 `
-class City extends Component {
+class PostPage extends Component {
     state={
-        city:[],
-        post:[]
+        
+        post:{}
     }
     componentDidMount(){
          
-        this.getCity()
+        this.getPost()
     }
 
-    getCity = async () => {
-        const cityId=this.props.match.params.id;
+    getPost = async () => {
+        const postId=this.props.match.params.id;
+        const city_id=
         try {
-            const cityReponse = await axios.get(`/api/cities/${cityId}`)
-            const postResponse = await axios.get(`/api/cities/${cityId}/posts`)
-            this.setState({city: cityReponse.data,
-           post: postResponse.data });
+            
+            const postResponse = await axios.get(`/api/cities/${city_id}posts/${postId}`)
+            this.setState({post: postReponse.data});
             console.log(this.state)
         }
         catch (err) {
@@ -66,4 +66,4 @@ class City extends Component {
     }
 }
 
-export default City;
+export default PostPage;

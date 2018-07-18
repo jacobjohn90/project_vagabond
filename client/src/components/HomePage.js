@@ -41,11 +41,13 @@ class HomePage extends Component {
           <Thumbnail src={city.picture} alt="242x200">
             <h3>{city.name}</h3>
             {/* <p>More info click below</p> */}
+            <Carousel.Item>
             <p>
               <Link to={`/cities/${city.id}`}>
                 <Button bsStyle="primary">Stuck here?</Button>
               </Link>
             </p>
+            </Carousel.Item>
           </Thumbnail>
         </Col>
       )
