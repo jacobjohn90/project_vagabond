@@ -47,3 +47,12 @@ ActiveRecord::Schema.define(version: 2018_07_16_203928) do
   add_foreign_key "posts", "cities"
   add_foreign_key "posts", "users"
 end
+
+
+
+const bigGuy=[users,post]
+bigGuy.map((userPost) 
+return {
+  <div> {  }</div>
+}
+)

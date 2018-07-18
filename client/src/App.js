@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import HomePage from './components/HomePage'
 import NavBar from './components/NavBar';
 import City from './components/City';
+import Login from './components/LogIn';
 
 const SwitchStyle=styled.div`
 margin-top:6rem;
@@ -18,9 +19,10 @@ state ={
   render() {
   
     return (
-      <div>
-      <NavBar/>
+    
+    <div>
       <Router>
+
         <SwitchStyle>
         <Switch>
           
@@ -31,8 +33,8 @@ state ={
         </Switch>
         </SwitchStyle>
       </Router>
-    
-      </div>
+     </div>
+
     );
   }
 }

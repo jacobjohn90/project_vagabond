@@ -33,11 +33,18 @@ const FirstBorn=styled.h4`
   color:red;
 }
 `
+const A= styled.a`
+text-decoration: none;
+color:white
+
+`
+
 
 
 class NavBar extends Component {
   state = {
-    logIn: false
+    logIn: false,
+    Overlay: false
   }
 
   render() {
@@ -45,8 +52,8 @@ class NavBar extends Component {
       <Backer>
        <PappaDiv>Layover Tour Guide </PappaDiv>
        <BabyDiv> <FirstBorn> <LogIn /> </FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
-       
       </Backer>
+
     );
   }
 }
@@ -57,41 +64,3 @@ export default NavBar;
 
 
 
-
-
-
-
-
-// const NavbarWrapper = styled(Navbar)`
-//   Navbar.Header Navbar.Brand a{
-//     color: red;
-//   }
-//  `
-
-// const Text = styled(Navbar.Brand)`
-//   &&& a{
-//     color: red;
-//   }
-//  `
-// const BigDiv = styled.div`
-
-
-// `
- {/* <NavbarWrapper inverse collapseOnSelect>
-          <Navbar.Header>
-            <Text>
-              <a href="#brand">Layover Tour Guide</a>
-            </Text>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav pullRight>
-              <NavItem eventKey={1} href="#">
-                Log In
-            </NavItem>
-              <NavItem eventKey={2} href="#">
-                Sign Up
-            </NavItem>
-            </Nav>
-          </Navbar.Collapse>
-        </NavbarWrapper> */}
