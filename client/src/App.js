@@ -20,20 +20,22 @@ state ={
   
     return (
     
-    <div>
+    
       <Router>
+        <div>
+          <NavBar />
+          <SwitchStyle>
+          <Switch>
+            
+            <Route exact path='/' component={HomePage}/>
 
-        <SwitchStyle>
-        <Switch>
-          
-          <Route exact path='/' component={HomePage}/>
+            <Route exact path='/cities/:city_id' component={City}/>
 
-          <Route exact path='/cities/:city_id' component={City}/>
-
-        </Switch>
-        </SwitchStyle>
+          </Switch>
+          </SwitchStyle>
+        </div>
       </Router>
-     </div>
+     
 
     );
   }
