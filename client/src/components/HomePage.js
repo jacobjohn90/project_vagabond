@@ -38,7 +38,7 @@ class HomePage extends Component {
     const cityMap = this.state.cities.map((city) => {
       return (
         <Col xs={6} md={4}>
-          <Thumbnail src={city.picture} style={{height:"30rem"}} alt="242x200">
+          <Thumbnail src={city.picture} alt="242x200">
             <h3>{city.name}</h3>
             {/* <p>More info click below</p> */}
             <Carousel.Item>
