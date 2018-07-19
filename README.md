@@ -8,7 +8,7 @@ The buildprocess was fun. The team comprised of 4 team members and was done in 3
 Many transit users on journeys covering vast distances experience layovers in towns that they havenever been to before. In such instances it's hard to know what to expect but with this new app you can look for information about specific towns from people who have been in a similar situation as you. To begin using these services, og in as the user the navigate using the buttons and links to see posts and details of the users and the posts. A tie stamp lets yu know when the visitor stopeed there to determine the time relevance.
 
 ## Snapshot
-../public/images/Home.png
+![cities](https://user-images.githubusercontent.com/35582310/42960761-c93989f8-8b5a-11e8-80ef-47e37932a78f.png)
 ../public/images/cities.png
 
 ## Heroku Site Link
