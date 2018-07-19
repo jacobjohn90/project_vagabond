@@ -1,6 +1,7 @@
 import React, { Component, render } from 'react';
 import { Popover,Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Tooltip, Modal, OverlayTrigger,Button, } from 'react-bootstrap'
 import styled from 'styled-components'
+import axios from 'axios';
 
 const ButtonStyle=styled(Button)`
 text-decoration:none;
@@ -27,6 +28,7 @@ color:black;
 `
 
 class NewPost extends Component {
+ 
     constructor(props, context) {
       super(props, context);
   
@@ -34,10 +36,31 @@ class NewPost extends Component {
       this.handleClose = this.handleClose.bind(this);
   
       this.state = {
-        show: false
+        show: false,
+        post:{},
       };
     }
-  
+    
+   
+    handleChange = (event) => {
+        console.log('hello there')
+        const inputName = event.target.name
+        const userInput = event.target.value
+        const newPost = {...this.state}
+        console.log(userInput)
+        console.log(inputName)
+        newPost[inputName] = userInput
+        this.setState(newPost)
+    }
+    createNewPost = (event) => {
+        
+        event.preventDefault()
+        axios.post('/api/cities/:city_id/posts', { post: this.state }).then((res) => {
+            console.log(res.data)
+            this.props.history.push(`/cities/city_id`)
+            this.props.getCity()
+        })
+    }
     handleClose() {
       this.setState({ show: false });
     }
@@ -45,6 +68,7 @@ class NewPost extends Component {
     handleShow() {
       this.setState({ show: true });
     }
+  
   
     render() {
       const popover = (
@@ -82,13 +106,13 @@ class NewPost extends Component {
       Title
     </Col>
     <Col sm={8}>
-      <FormControl type="Title" placeholder="Title" />
+      <FormControl type="Title" placeholder="Title" onChange={this.handleChange} />
     </Col>
   </FormGroup> 
 
   <FormGroup controlId="formControlsTextarea">
      <Col sm={2}> <ControlLabel>Comment</ControlLabel> </Col>
-    <Col sm={10}>  <FormControl componentClass="textarea" placeholder="textarea" /> </Col>
+    <Col sm={10}>  <FormControl componentClass="textarea" placeholder="textarea" onChange={this.handleChange} /> </Col>
     </FormGroup>
 
 
@@ -96,7 +120,7 @@ class NewPost extends Component {
 
   <FormGroup>
     <Col smOffset={2} sm={8}>
-      <Button type="submit">submit</Button>
+      <Button type="submit" onSubmit={this.createNewPost}>submit</Button>
     </Col>
   </FormGroup>
 </Form>
@@ -111,6 +135,7 @@ class NewPost extends Component {
       render(<NewPost />);
     }
   }
+  
   
   
 
