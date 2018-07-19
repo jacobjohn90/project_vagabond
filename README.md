@@ -31,9 +31,8 @@ The ERD for the project is available via the following link:-
 ## Presentation
 The Presentation for the project is available via the following link:-
 
-```
-../public/images/Layover Pitch Deck.ppt
-```
+[Layover Pitch Deck.pptx](https://github.com/jacobjohn90/project_vagabond/files/2211346/Layover.Pitch.Deck.pptx)
+
 ## Trello
 
 Please find the user stories via the following link:-
