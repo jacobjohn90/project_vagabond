@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import { Thumbnail,Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Tooltip, Modal, OverlayTrigger,Button, } from 'react-bootstrap'
+
 
 const Post = styled.div`
 // float:right;
@@ -16,6 +18,12 @@ border-radius:5px;
 const User = styled.div`
 margin-top:50px;
 margin-left: 200px;
+img{
+    border-bottom:solid;
+  
+}
+background-color:rgba(55,27,44,0.10);
+border:solid;
 `
 const Container = styled.div`
 display:flex;
@@ -23,11 +31,10 @@ display:flex;
 const Options = styled.div`
 display:block;
 
-
-
-
 `
-
+const ColStyle =styled(Col)`
+top:50px;
+`
 class UserProfile extends Component {
     state = {
         userData: {
@@ -72,7 +79,7 @@ class UserProfile extends Component {
     <p class="card-text"> {post.comment}</p>
    <center> <Options>
     <a href="#" class="btn btn-primary">Edit</a>
-    <a href="#" class="btn btn-primary">Delete</a>
+    <a href="#" class="btn btn-danger">Delete</a>
    </Options></center>
   </div>
   <div class="card-footer text-muted">
@@ -82,25 +89,45 @@ class UserProfile extends Component {
             )
         })
         return (
-            <Container>
-                <User>
-                    <img src={user.profile_pic} />
-                    <h2> {user.name}</h2>
-                    <h4>{user.email}</h4>
-                    <h4>Current City: {user.current_city}</h4>
+            // <Container>
+            //     <User>
+            //         <img src={user.profile_pic} />
+            //        <center><h2> {user.name}</h2>
+            //         <h4>{user.email}</h4>
+            //         <h4>Current City: {user.current_city}</h4>
                    
-                     <h5>Date joined: {user.created_at}</h5>
-                     <button>Edit Profile</button>
+            //          <h5>Date joined: {user.created_at}</h5></center> 
+                 
+            //           <button>Edit Profile</button>
+            //     </User>
+                // <div>
                   
-                </User>
-                <div>
+                //     {userPost}
+                    
+                // </div>
+            // </Container>
+            <Container>
+                
+<ColStyle xs={6} md={4}>
+      <Thumbnail src={user.profile_pic} alt="242x200">
+      <center>
+      <h2> {user.name}</h2>
+      <h4>{user.email}</h4>
+      <h4>Current City: {user.current_city}</h4>
+      <h5>Date joined: {user.created_at}</h5>
+      </center>
+        <center>
+          
+          <Button bsStyle="default">Edit Profile</Button>
+        </center>
+      </Thumbnail>
+    </ColStyle>
+    <div>
                   
                     {userPost}
                     
                 </div>
-            </Container>
-
-
+</Container>
         );
     }
 }
