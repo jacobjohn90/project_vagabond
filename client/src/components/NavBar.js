@@ -51,7 +51,7 @@ class NavBar extends Component {
   render() {
     return (
       <Backer>
-     <Link to="/">  <PappaDiv>Layover Tour Guide </PappaDiv></Link>
+     <Link to="/">  <PappaDiv>Layover Tour Guide </PappaDiv></Link> 
        <BabyDiv> <FirstBorn> <LogIn /> </FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
       </Backer>
 

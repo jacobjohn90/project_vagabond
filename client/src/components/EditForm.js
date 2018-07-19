@@ -89,9 +89,9 @@ class NewPost extends Component {
         <div>
           
   
-          <ButtonStyle onClick={this.handleShow}>
+          <Button onClick={this.handleShow}>
            Edit 
-          </ButtonStyle>
+          </Button>
   
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
