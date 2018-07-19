@@ -1,6 +1,7 @@
 import React, { Component, render } from 'react';
 import { Popover,Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Tooltip, Modal, OverlayTrigger,Button, } from 'react-bootstrap'
 import styled from 'styled-components'
+import axios from 'axios';
 
 const ButtonStyle=styled(Button)`
 text-decoration:none;
@@ -27,24 +28,51 @@ color:black;
 `
 
 class NewPost extends Component {
-    constructor(props, context) {
-      super(props, context);
+ 
+    // constructor(props, context) {
+    //   super(props, context);
   
-      this.handleShow = this.handleShow.bind(this);
-      this.handleClose = this.handleClose.bind(this);
-  
-      this.state = {
-        show: false
+    //   this.handleShow = this.handleShow.bind(this);
+    //   this.handleClose = this.handleClose.bind(this);
+    state = {
+        show: false,
+        post:{
+            title: '',
+            comment: '',
+            user_id: 4
+        },
       };
+    // }
+    
+   
+    handleChange = (event) => {
+        const inputName = event.target.name
+        const userInput = event.target.value
+        const post = {...this.state.post}
+        console.log(userInput)
+        console.log(inputName)
+        post[inputName] = userInput
+        this.setState({post})
     }
-  
-    handleClose() {
+    createNewPost = (event) => {
+        event.preventDefault()
+        const cityId = this.props.props.match.params.city_id
+        console.log(this.state.post)
+        axios.post(`/api/cities/${cityId}/posts`, this.state.post).then((res) => {
+            console.log(res.data)
+            this.props.props.history.push(`/cities/${cityId}`)
+            this.props.getCity()
+            this.handleClose()
+        })
+    }
+    handleClose =() => {
       this.setState({ show: false });
     }
   
-    handleShow() {
+    handleShow =() => {
       this.setState({ show: true });
     }
+  
   
     render() {
       const popover = (
@@ -76,27 +104,27 @@ class NewPost extends Component {
   
               <hr />
   
-              <Form horizontal>
+              <Form onSubmit={this.createNewPost} horizontal>
   <FormGroup controlId="formHorizontalEmail">
     <Col componentClass={ControlLabel} sm={2}>
       Title
     </Col>
     <Col sm={8}>
-      <FormControl type="Title" placeholder="Title" />
+      <FormControl name="title" type="Title" placeholder="Title" onChange={this.handleChange} />
     </Col>
   </FormGroup> 
 
   <FormGroup controlId="formControlsTextarea">
      <Col sm={2}> <ControlLabel>Comment</ControlLabel> </Col>
-    <Col sm={10}>  <FormControl componentClass="textarea" placeholder="textarea" /> </Col>
+    <Col sm={10}>  <FormControl name="comment" componentClass="textarea" placeholder="textarea" onChange={this.handleChange} /> </Col>
     </FormGroup>
 
 
   
 
-  <FormGroup>
+  <FormGroup >
     <Col smOffset={2} sm={8}>
-      <Button type="submit">submit</Button>
+      <Button type="submit" >submit</Button>
     </Col>
   </FormGroup>
 </Form>
@@ -111,6 +139,7 @@ class NewPost extends Component {
       render(<NewPost />);
     }
   }
+  
   
   
 
