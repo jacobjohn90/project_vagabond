@@ -54,11 +54,11 @@ class NewPost extends Component {
         post[inputName] = userInput
         this.setState({post})
     }
-    createNewPost = (event) => {
+    EditPost = (event) => {
         event.preventDefault()
         const cityId = this.props.props.match.params.city_id
         console.log(this.state.post)
-        axios.post(`/api/cities/${cityId}/posts`, this.state.post).then((res) => {
+        axios.put(`/api/cities/${cityId}/posts`, this.state.post).then((res) => {
             console.log(res.data)
             this.props.props.history.push(`/cities/${cityId}`)
             this.props.getCity()

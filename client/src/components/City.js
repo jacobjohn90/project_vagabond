@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import NewPost from './NewPost';
 
 const Backer=styled.div`
@@ -75,6 +75,7 @@ class City extends Component {
                         <div> {post.comment}</div>
                         <div>{post.created_at}</div>
                     </div>
+                   
                     <hr></hr>
                 </Wrapper>      
             )
