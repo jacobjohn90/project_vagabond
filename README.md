@@ -26,7 +26,7 @@ https://www.figma.com/file/eEBPVC9jDMWr7wbqO6gHNHMD/Untitled
 ## ERD
 The ERD for the project is available via the following link:-
 ```
-![erd](https://user-images.githubusercontent.com/35582310/42960879-271a75aa-8b5b-11e8-92d4-7c6f9c358a45.png)
+![erd](https://user-images.githubusercontent.com/35582310/42961026-90534574-8b5b-11e8-9928-9cb46f0ae66f.png)
 ```
 ## Presentation
 The Presentation for the project is available via the following link:-
