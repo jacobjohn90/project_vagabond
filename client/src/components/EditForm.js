@@ -27,54 +27,41 @@ color:black;
 `
 
 class EditForm extends Component {
-    
-    state={
-    post:{},
-    title:"",
-    comment:""
-}
-handleChange = (event) => {
-    console.log('hello there')
-  
-    const inputName = event.target.name
-    const userInput = event.target.value
-    const newPost = {...this.state}
-    console.log(userInput)
-    console.log(inputName)
 
-    newPost[inputName] = userInput
-    this.setState(newPost)
-}
-createNewPost = (event) => {
-    
-    event.preventDefault()
-    axios.post('/api/cities/:city_id/posts', { post: this.state }).then((res) => {
-        console.log(res.data)
-        this.props.history.push(`/`)
-        this.props.getCity()
-    })
-}
-
-    constructor(props, context) {
-        super(props, context);
-    
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-    
-        this.state = {
-          show: false
+        state = {
+          show: false,
+          post:{},
+         title:"",
+          comment:""
         };
       }
+
+      componentDidMount() {
+        const cityId = this.props.match.params.city_Id
+
+        axios.get(`/api/cities/${cityId}/post`)
+            .then((res) => {
+              const  store = res.data
+                this.setState({
+                    store
+                })
+            })
+            .catch((err) => {
+                console.error(err)
+            })
+
+    }
+
     
-      handleClose() {
+      handleClose=()=> {
         this.setState({ show: false });
       }
     
-      handleShow() {
+      handleShow=()=> {
         this.setState({ show: true });
       }
     
-      render() {
+      render=() =>{
         const popover = (
           <Popover id="modal-popover" title="popover">
             very popover. such engagement
