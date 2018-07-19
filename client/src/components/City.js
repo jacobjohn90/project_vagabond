@@ -86,7 +86,7 @@ class City extends Component {
                     <ImageContainer>
                         <img src={this.state.city.picture} />
 
-                        <center> <h3>Tell us what to do in... {this.state.city.name} <NewPost/> </h3> </center>
+                        <center> <h3>Tell us what to do in... {this.state.city.name} <NewPost props={this.props} getCity={this.getCity}/> </h3> </center>
                     </ImageContainer>
                     <Post> {eachPosts}</Post>
                 </div>
