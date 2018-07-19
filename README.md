@@ -19,10 +19,9 @@ https://layover-tour-guide.herokuapp.com/
 ```
 ## wireframe
 The wireframe for the project is available via the following link:-
-```
-https://www.figma.com/file/eEBPVC9jDMWr7wbqO6gHNHMD/Untitled
 
-```
+![wireframe](https://user-images.githubusercontent.com/35582310/42964618-9218a9a8-8b65-11e8-835f-a8e70f9729a3.png)
+
 ## ERD
 The ERD for the project is available via the following link:-
 
