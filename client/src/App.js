@@ -6,6 +6,7 @@ import HomePage from './components/HomePage'
 import NavBar from './components/NavBar';
 import City from './components/City';
 import PostPage from './components/PostPage';
+import UserPage from './components/UserProfile'
 import axios from 'axios'
 
 const SwitchStyle=styled.div`
@@ -42,6 +43,11 @@ getUsers = async () => {
         <PostPage users={this.state.users}{...props} />
       )
     }
+    const ShowUser = (props) => {
+      return (
+        <UserPage users={this.state.users}{...props} />
+      )
+    }
   
     return (
     
@@ -53,6 +59,7 @@ getUsers = async () => {
           <Switch>
             
             <Route exact path='/' component={HomePage}/>
+            <Route exact path='/users/:user_id' component={ShowUser}/>
             <Route exact path='/cities/:city_id' component={CityPage}/>
             <Route exact path='/cities/:city_id/posts/:id' component={ShowPost}/>
 
