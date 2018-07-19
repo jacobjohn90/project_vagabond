@@ -39,7 +39,7 @@ class NewPost extends Component {
         post:{
             title: '',
             comment: '',
-            user_id: 37
+            user_id: 5
         },
       };
     // }
@@ -57,7 +57,7 @@ class NewPost extends Component {
     createNewPost = (event) => {
         event.preventDefault()
         const cityId = this.props.props.match.params.city_id
-        
+
         axios.post(`/api/cities/${cityId}/posts`, this.state.post).then((res) => {
             this.props.props.history.push(`/cities/${cityId}`)
             this.props.getCity()
