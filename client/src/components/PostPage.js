@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-import { Thumbnail,  Col } from "react-bootstrap";
+import { Thumbnail, ButtonToolbar, Button, Col } from "react-bootstrap";
 
 const ThumbnailStyle = styled(Thumbnail)`
     text-align: center;
@@ -22,6 +22,17 @@ class PostPage extends Component {
   componentDidMount() {
     this.getPost();
   }
+  handleDelete = () => {
+    if (this.props.match.params) {
+      const cityId = this.props.match.params.city_id;
+      const postId = this.props.match.params.id;
+      
+      axios.delete(`/api/cities/${cityId}/posts/${postId}`).then(res => {
+        this.props.history.push(`/cities/${cityId}`);
+      });
+    }
+  };
+
 
   getPost = async () => {
     const postId = this.props.match.params.id;
@@ -37,8 +48,6 @@ class PostPage extends Component {
       this.setState({ currentUser });
     } catch (err) {
       console.log(err);
-
-      // return err.message
     }
   };
 
@@ -62,6 +71,11 @@ class PostPage extends Component {
             <ThumbnailStyle>
               <h1>{this.state.post.title}</h1>
               <h3>{this.state.post.comment}</h3>
+              <ButtonToolbar>
+              <Link to="#"><Button bsStyle="default">Edit</Button></Link>
+            
+              <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
+              </ButtonToolbar>
             </ThumbnailStyle>
           </Col>
         
