@@ -16,13 +16,19 @@ width:100%;
 top:0;
 justify-content:space-around;
 align-items:center;
-font-family: 'Shadows Into Light', cursive;
+font-family: 'Quattrocento', serif;
 `
 const PappaDiv=styled.h1`
 font-size:4rem;
 margin: 0;
-
-
+:hover {
+  text-decoration: none;
+  color: white;
+}
+:focus {
+  text-decoration: none;
+  color: white;
+}
 `
 const BabyDiv= styled.div`
 display:flex;
@@ -30,14 +36,18 @@ justify-content:space-around;
 width:150px;
 `
 const FirstBorn=styled.h4`
-:hover{
-  color:red;
-}
+
 `
-const A= styled.a`
+const A= styled(Link)`
 text-decoration: none;
 color:white
-
+:hover{
+  text-decoration: none;
+}
+:focus {
+  text-decoration: none;
+  color: white;
+}
 `
 
 
@@ -51,7 +61,7 @@ class NavBar extends Component {
   render() {
     return (
       <Backer>
-     <Link to="/">  <PappaDiv>Layover Tour Guide </PappaDiv></Link>
+     <A to="/">  <PappaDiv>Layover Tour Guide </PappaDiv></A>
        <BabyDiv> <FirstBorn> <LogIn /> </FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
       </Backer>
 

@@ -11,11 +11,11 @@ justify-content:center;
 
 const Wrapper = styled.div`
 display: flex;
-// justify-content:flex-start;
-margin-left: 35%;
 margin-bottom: 1%;
 justify-content: center;
-background-color:rgba(192,192,192,0.3);
+background-color: rgba(55, 27, 44, 0.1);
+border-radius: 5px;
+padding: 10px;
 width:45%;
 
 `
@@ -26,9 +26,11 @@ img{
 }
 `
 const Post = styled.div`
-
-justify-content:flex-end;
-flex-direction:column;
+display: flex;
+margin: 0 auto;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 
 `
 const ImageStyle = styled.img`
@@ -53,7 +55,6 @@ class City extends Component {
                 city: cityReponse.data,
                 post: postResponse.data
             });
-            // console.log(this.props)
         }
         catch (err) {
             console.log(err)
@@ -65,7 +66,6 @@ class City extends Component {
 
         const eachPosts = this.state.post.map((post) => {
             const currentUser = this.props.users.find((user) => user.id === post.user_id)
-            // console.log(post.users.name)
             return (
                 
                 <Wrapper>
