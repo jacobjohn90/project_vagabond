@@ -5,15 +5,16 @@ This is a website that allows users to review the city where they have a layover
 The buildprocess was fun. The team comprised of 4 team members and was done in 3 sprints each 1 day apart. The consultation with the clients was done at the end of each sprint to make sure that we were meeting their needs. 
 
 ## Overview
-Many transit users going to  
+Many transit users on journeys covering vast distances experience layovers in towns that they havenever been to before. In such instances it's hard to know what to expect but with this new app you can look for information about specific towns from people who have been in a similar situation as you. To begin using these services, og in as the user the navigate using the buttons and links to see posts and details of the users and the posts. A tie stamp lets yu know when the visitor stopeed there to determine the time relevance.
 
 ## Snapshot
-![image](https://user-images.githubusercontent.com/35582310/42146632-f847150c-7d96-11e8-8ab2-6f95bdef958d.png)
+../public/images/Home.png
+../public/images/cities.png
 
 ## Heroku Site Link
 The live website for the project is available via the following link:-
 ```
-https://protected-meadow-64552.herokuapp.com/
+https://layover-tour-guide.herokuapp.com/
 
 ```
 ## wireframe
@@ -25,21 +26,23 @@ https://www.figma.com/file/eEBPVC9jDMWr7wbqO6gHNHMD/Untitled
 ## ERD
 The ERD for the project is available via the following link:-
 ```
-https://www.draw.io/#G1tfIS0KrKEpg40NEIZ_z4ubTYoIAzKxMB
+../public/images/ERD.png
+```
+## Presentation
+The Presentation for the project is available via the following link:-
 
 ```
-![image](https://user-images.githubusercontent.com/35582310/42388408-6a16eb06-8113-11e8-9474-1c2f74768980.png)
-
-
+../public/images/Layover Pitch Deck.ppt
+```
 ## Trello
 
 Please find the user stories via the following link:-
 ```
-https://trello.com/b/7s5pfW5u/aspen-cottage-holidays
+https://trello.com/b/Flwv8X1G/vagabond-project  
 
 ```
 ## Version 2
-In my second version I would love to be able to make my activities page create, read update and delete. An actual log in would be an important addition. 
+In our second version we would like to incorporate the device and change the navbar theme.
 
 ## Technologies
 ### Front-End
@@ -47,10 +50,14 @@ In my second version I would love to be able to make my activities page create, 
 * React-Bootstrap
 * Styled-Components
 ### Back-End
-* Express
-* MongoDB
+* Rails
+* PostgresQl
 * Postman 
-* Node.js
+### Version-Control
+* git
+### Presentation
+* pitch deck
+
 ## References
 
 https://dashboard.heroku.com/
