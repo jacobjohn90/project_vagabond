@@ -1,6 +1,7 @@
 import React, { Component, render } from 'react';
 import { Popover,Form, FormGroup, FormControl, Col, ControlLabel, Checkbox, Tooltip, Modal, OverlayTrigger,Button, } from 'react-bootstrap'
 import styled from 'styled-components'
+import swal from 'sweetalert';
 
 const ButtonStyle=styled(Button)`
 text-decoration:none;
@@ -30,7 +31,10 @@ class LogIn extends Component {
       this.handleClose = this.handleClose.bind(this);
   
       this.state = {
-        show: false
+        show: false,
+        email: '',
+        password: '',
+
       };
     }
   
@@ -40,6 +44,24 @@ class LogIn extends Component {
   
     handleShow() {
       this.setState({ show: true });
+    }
+    handleChange = (event) => {
+      const inputName = event.target.name
+      const userInput = event.target.value
+
+      this.setState({
+        [inputName]: userInput
+      })
+    }
+
+    handleSubmit = (event) => {
+      event.preventDefault()
+      const currentUser = this.props.users.find((user) => user.email === this.state.email)
+      if (currentUser !== undefined && this.state.password === currentUser.password) {
+          this.handleClose()
+      } else {
+          swal('Incorrect Name and/or Password.', 'Try again! New User? Create a new account')
+      }
     }
   
     render() {
@@ -59,13 +81,13 @@ class LogIn extends Component {
               <Modal.Title>Log In</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Form horizontal>
+              <Form onSubmit={this.handleSubmit} horizontal>
                 <FormGroup controlId="formHorizontalEmail">
                   <Col componentClass={ControlLabel} sm={2}>
                     Email
                   </Col>
                   <Col sm={8}>
-                    <FormControl type="email" placeholder="Email" />
+                    <FormControl type="email" placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange} />
                   </Col>
                 </FormGroup>
                 <FormGroup controlId="formHorizontalPassword">
@@ -73,7 +95,7 @@ class LogIn extends Component {
                     Password
                   </Col>
                   <Col sm={8}>
-                    <FormControl type="password" placeholder="Password" />
+                    <FormControl type="password" placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange} />
                   </Col>
                 </FormGroup>
                 <FormGroup>

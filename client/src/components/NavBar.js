@@ -64,7 +64,7 @@ class NavBar extends Component {
 
      <A to="/">  <PappaDiv>Layover Tour Guide </PappaDiv></A>
 
-       <BabyDiv> <FirstBorn> <LogIn /> </FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
+       <BabyDiv> <FirstBorn> <LogIn users={this.props.users} /> </FirstBorn> <FirstBorn> <SignUp /> </FirstBorn></BabyDiv>
       </Backer>
 
     );

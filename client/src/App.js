@@ -54,7 +54,7 @@ getUsers = async () => {
     
       <Router>
         <div>
-          <NavBar />
+          <NavBar users={this.state.users}/>
           <SwitchStyle>
           <Switch>
             
