@@ -30,12 +30,10 @@ class Api::PostsController < ApplicationController
     end
     
     def destroy
-    @post = Post.find(params[:id]).destory
+    @post = Post.find(params[:id]).destroy
     render status: :ok
     end
-
-
-
+    
     private
     
     def post_params

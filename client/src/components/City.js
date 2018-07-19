@@ -61,7 +61,7 @@ class City extends Component {
     }
 
     render() {
-
+        const cityId = this.props.match.params.city_id;
 
         const eachPosts = this.state.post.map((post) => {
             const currentUser = this.props.users.find((user) => user.id === post.user_id)
@@ -71,7 +71,7 @@ class City extends Component {
                 <Wrapper>
                     <ImageStyle width={130} height={130} src={currentUser.profile_pic} alt="profile pic" />
                     <div>
-                        <Link to='#'> <div> {post.title}</div></Link>
+                        <Link to={`/cities/${cityId}/posts/${post.id}`}> <div> {post.title}</div></Link>
                         <div> {post.comment}</div>
                         <div>{post.created_at}</div>
                     </div>
