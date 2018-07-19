@@ -17,14 +17,14 @@ users = User.create([
         date_joined:' 8/27/17',
         current_city:' Seattle',
         password:' thinkthinkTHINK',
-        profile_pic:' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxzuZyHYh_RrbcRLenk6-xs4PtKPwyS53_TcrTuXqS_N55aUS'
+        profile_pic:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxzuZyHYh_RrbcRLenk6-xs4PtKPwyS53_TcrTuXqS_N55aUS'
     },
     {   name:'Andre 3000',
         email:' Mr3000@gmail.com',
         date_joined:' 9/23/17',
         current_city:' Atlanta',
         password:' LovebeLow',
-        profile_pic:' https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.elroyonline.com%2Feol_images%2Fembedimg%2Fclassof3000-trans.png&imgrefurl=http%3A%2F%2Fwww.elroyonline.com%2F%3Fp%3D99845795&docid=DvI4agHbEOwmrM&tbnid=M0sA7w8prjuTtM%3A&vet=10ahUKEwjkkLHj-6TcAhWCna0KHZr-AhwQMwhVKBUwFQ..i&w=475&h=217&bih=750&biw=1440&q=andre%203000%20cartoon&ved=0ahUKEwjkkLHj-6TcAhWCna0KHZr-AhwQMwhVKBUwFQ&iact=mrc&uact=8'
+        profile_pic:'https://i.pinimg.com/originals/97/d3/01/97d3013334eadf4f977c890f1f018412.jpg'
     },
     {   name:'Head Phones',
         email:' headphones@gmail.com',
@@ -50,13 +50,13 @@ cities = City.create([
         picture: "https://source.unsplash.com/J-ClkL7wNUs" 
     },
     {   name: "New-York",
-        picture: "https://source.unsplash.com/UExx0KnnkjY/"
+        picture: "https://source.unsplash.com/UExx0KnnkjY"
     },
     {   name: "London",
-        picture: "https://source.unsplash.com/iXqTqC-f6jI/" 
+        picture: "https://source.unsplash.com/iXqTqC-f6jI" 
     },
     {   name: "San-Francisco",
-        picture: "https://source.unsplash.com/vF9qIeQ-DI8/"
+        picture: "https://source.unsplash.com/baB_X9G7y2I"
     }
 ])
 
