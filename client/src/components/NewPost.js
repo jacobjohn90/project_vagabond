@@ -39,7 +39,7 @@ class NewPost extends Component {
         post:{
             title: '',
             comment: '',
-            user_id: 4
+            user_id: 37
         },
       };
     // }
@@ -54,12 +54,11 @@ class NewPost extends Component {
         post[inputName] = userInput
         this.setState({post})
     }
-    EditPost = (event) => {
+    createNewPost = (event) => {
         event.preventDefault()
         const cityId = this.props.props.match.params.city_id
-        console.log(this.state.post)
-        axios.put(`/api/cities/${cityId}/posts`, this.state.post).then((res) => {
-            console.log(res.data)
+        
+        axios.post(`/api/cities/${cityId}/posts`, this.state.post).then((res) => {
             this.props.props.history.push(`/cities/${cityId}`)
             this.props.getCity()
             this.handleClose()
@@ -135,8 +134,8 @@ class NewPost extends Component {
             </Modal.Footer>
           </Modal>
         </div>
-      );
-      render(<NewPost />);
+      )
+
     }
   }
   
