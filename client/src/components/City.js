@@ -34,7 +34,10 @@ flex-direction: column;
 
 `
 const ImageStyle = styled.img`
-margin-right: 2%
+margin-right: 2%;
+width: 130px;
+height: 130px;
+
 `
 class City extends Component {
     state = {
