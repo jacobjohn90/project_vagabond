@@ -48,74 +48,48 @@ class LogIn extends Component {
           very popover. such engagement
         </Popover>
       );
-      const tooltip = <Tooltip id="modal-tooltip">wow.</Tooltip>;
   
       return (
         <div>
-          
-  
           <ButtonStyle bsStyle="link" bsSize="large" id="buttondiv" onClick={this.handleShow}>
             Log In
           </ButtonStyle>
-  
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>Log In</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              
-  
-              <h4>Tooltips in a modal</h4>
-              <p>
-                there is a{' '}
-                <OverlayTrigger overlay={tooltip}>
-                  <a href="#tooltip">tooltip</a>
-                </OverlayTrigger>{' '}
-                here
-              </p>
-  
-              <hr />
-  
               <Form horizontal>
-  <FormGroup controlId="formHorizontalEmail">
-    <Col componentClass={ControlLabel} sm={2}>
-      Email
-    </Col>
-    <Col sm={8}>
-      <FormControl type="email" placeholder="Email" />
-    </Col>
-  </FormGroup>
-
-  <FormGroup controlId="formHorizontalPassword">
-    <Col componentClass={ControlLabel} sm={2}>
-      Password
-    </Col>
-    <Col sm={8}>
-      <FormControl type="password" placeholder="Password" />
-    </Col>
-  </FormGroup>
-
-  <FormGroup>
-    <Col smOffset={2} sm={8}>
-      <Checkbox>Remember me</Checkbox>
-    </Col>
-  </FormGroup>
-
-  <FormGroup>
-    <Col smOffset={2} sm={8}>
-      <Button type="submit">Sign in</Button>
-    </Col>
-  </FormGroup>
-</Form>;
-             
+                <FormGroup controlId="formHorizontalEmail">
+                  <Col componentClass={ControlLabel} sm={2}>
+                    Email
+                  </Col>
+                  <Col sm={8}>
+                    <FormControl type="email" placeholder="Email" />
+                  </Col>
+                </FormGroup>
+                <FormGroup controlId="formHorizontalPassword">
+                  <Col componentClass={ControlLabel} sm={2}>
+                    Password
+                  </Col>
+                  <Col sm={8}>
+                    <FormControl type="password" placeholder="Password" />
+                  </Col>
+                </FormGroup>
+                <FormGroup>
+                  <Col smOffset={2} sm={8}>
+                    <Button type="submit">Sign in</Button>
+                  </Col>
+                </FormGroup>
+              </Form>            
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this.handleClose}>Close</Button>
             </Modal.Footer>
           </Modal>
         </div>
-      );
-      render(<LogIn />);
+      )
+
     }
   }
   

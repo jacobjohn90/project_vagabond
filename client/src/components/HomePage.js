@@ -15,6 +15,15 @@ const Badge= styled(Thumbnail)`
   
 }
 `
+const ImgTrimmer = styled.div`
+max-height: 400px;
+max-width: 100vw;
+overflow: hidden;
+`
+const ImgStyle = styled.img`
+width: 100vw;
+`
+
 
 
 class HomePage extends Component {
@@ -45,12 +54,23 @@ class HomePage extends Component {
 
 
   render() {
+    const cityImages = this.state.cities.map((city) => {
+      return(
+        <Carousel.Item>
+          <ImgTrimmer>
+            <ImgStyle alt="900x500" src={city.picture} />
+          </ImgTrimmer>
+          <Carousel.Caption>
+            <h3>{city.name}</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+      )
+    })
     const cityMap = this.state.cities.map((city) => {
       return (
         <Col xs={6} md={4}>
-          <Badge src={city.picture} alt="242x200">
+          <Badge src={`${city.picture}/750x500`} alt="242x200">
             <h3>{city.name}</h3>
-            {/* <p>More info click below</p> */}
             <p>
               <Link to={`/cities/${city.id}`}>
                 <Button bsStyle="primary">Stuck here?</Button>
@@ -67,31 +87,7 @@ class HomePage extends Component {
 
         <CarouselContainer>
           <Carousel>
-            <Carousel.Item>
-              <img width={13000} height={300} alt="900x500" src="https://source.unsplash.com/J-ClkL7wNUs/900x300" />
-              <Carousel.Caption>
-                <h3>Atlanta</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-
-
-            <Carousel.Item>
-              <img width={13000} height={300} alt="900x500" src="https://source.unsplash.com/_WuPjE-MPHo/900x300" />
-              <Carousel.Caption>
-                <h3>New Delhi</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-
-
-            <Carousel.Item>
-              <img width={13000} height={300} alt="900x500" src="https://source.unsplash.com/ubSUwrr04Ks/900x300" />
-              <Carousel.Caption>
-                <h3>New York City</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
+            {cityImages}
           </Carousel>
         </CarouselContainer>
 
