@@ -50,13 +50,13 @@ cities = City.create([
         picture: "https://source.unsplash.com/J-ClkL7wNUs" 
     },
     {   name: "New-York",
-        picture: "https://source.unsplash.com/UExx0KnnkjY/1500x1000"
+        picture: "https://source.unsplash.com/UExx0KnnkjY/"
     },
     {   name: "London",
-        picture: "https://source.unsplash.com/Yn9LiXt53jQ/1500x1000" 
+        picture: "https://source.unsplash.com/iXqTqC-f6jI/" 
     },
     {   name: "San-Francisco",
-        picture: "https://source.unsplash.com/vF9qIeQ-DI8/1500x1000"
+        picture: "https://source.unsplash.com/vF9qIeQ-DI8/"
     }
 ])
 
