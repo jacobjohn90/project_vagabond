@@ -2,8 +2,41 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-import { Thumbnail, ButtonToolbar, Button, Col } from "react-bootstrap";
+import { Thumbnail, ButtonToolbar,Button, Col } from "react-bootstrap";
+import EditForm from './EditForm';
 
+const ButtonStyle=styled(Button)`
+width:5rem;
+fount-size:.2rem;
+text-decoration:none;
+margin-top:10px;
+margin-bottom:20px;
+background-color:rgb(205,92,92);
+box-shadow: 3px 3px ;
+color:black;
+:focus{
+    text-decoration: underline;
+    outline:0;
+    color:White ;
+}
+:active{
+    text-decoration:underline;
+    outline:0 !important;
+    color:white;
+    color:#white !important;
+}
+:hover{
+    text-decoration:underline;
+    color:#white !important;
+}
+`
+
+const Center= styled.div`
+display:flex;
+justify-content: space-evenly;
+align-content: center;
+
+`
 const ThumbnailStyle = styled(Thumbnail)`
     text-align: center;
 `
@@ -72,9 +105,9 @@ class PostPage extends Component {
               <h1>{this.state.post.title}</h1>
               <h3>{this.state.post.comment}</h3>
               <ButtonToolbar>
-              <Link to="#"><Button bsStyle="default">Edit</Button></Link>
+            <Center> <EditForm props={this.props} getCity={this.getPost}/>
             
-              <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
+              <ButtonStyle bsStyle="danger" onClick={this.handleDelete}>Delete</ButtonStyle> </Center> 
               </ButtonToolbar>
             </ThumbnailStyle>
           </Col>
