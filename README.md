@@ -9,7 +9,7 @@ Many transit users on journeys covering vast distances experience layovers in to
 
 ## Snapshot
 ![cities](https://user-images.githubusercontent.com/35582310/42960761-c93989f8-8b5a-11e8-80ef-47e37932a78f.png)
-../public/images/cities.png
+
 
 ## Heroku Site Link
 The live website for the project is available via the following link:-
